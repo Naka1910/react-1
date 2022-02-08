@@ -13,6 +13,7 @@ function App() {
   function onDelete(id) {
     alert("Oops this is an alert sign " + id)
   }
+  const showFooter = true;
   return (
     <div className="App">
       <header className="App-header">
@@ -27,6 +28,9 @@ function App() {
           ))
         }
       </header>
+      {
+        showFooter ? <footer> Footer Text </footer> : <footer> Footer Text 11</footer>
+      }
     </div>
   );
 }

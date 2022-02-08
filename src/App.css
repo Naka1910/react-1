@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #856b54;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items:center;
+  justify-content: space-between;
+  font-size: calc(20px + 2vmin);
+  color: rgb(44, 26, 26);
 }
 
 .App-link {
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App-button{
+  background-color:rgb(148, 121, 121);
+  color: #ebc4a0;
+  padding: 5px;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.App-box{
+  background-color: rgb(129, 52, 52);
+  margin-right: 50px;
 }

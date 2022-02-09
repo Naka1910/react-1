@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import Task from './Task';
+import Counter from './Counter';
 // const greeting = 'HELLO WORLD!'
-const tasks = [
-  { id: 1, text: 'Lorem Ipsum 1', completed: true },
-  { id: 2, text: 'Lorem Ipsum 2', completed: false },
-  { id: 3, text: 'Lorem Ipsum 3', completed: true },
+// const tasks = [
+//   { id: 1, text: 'Lorem Ipsum 1', completed: true },
+//   { id: 2, text: 'Lorem Ipsum 2', completed: false },
+//   { id: 3, text: 'Lorem Ipsum 3', completed: true },
 
-]
+// ]
 
 function App() {
   function onDelete(id) {
-    alert("Oops this is an alert sign " + id)
+    fetch('/delete/' + id)
+      .then(() => { })
+      .catch(() => { })
   }
   const showFooter = true;
   return (
     <div className="App">
       <header className="App-header">
-        {
+
+        <Counter />
+
+
+        {/* {
           tasks.map(task => (
             <Task
               key={task.id}
@@ -26,10 +33,10 @@ function App() {
               completed={task.completed}
               onDelete={onDelete} />
           ))
-        }
+        } */}
       </header>
       {
-        showFooter ? <footer> Footer Text </footer> : <footer> Footer Text 11</footer>
+        // showFooter ? <footer> Footer Text </footer> : <footer> Footer Text 11</footer>
       }
     </div>
   );

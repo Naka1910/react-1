@@ -36,13 +36,12 @@
     transform: rotate(360deg);
   }
 }
-.App-button{
-  background-color:rgb(148, 121, 121);
+.button{
+  background-color:rgb(131, 75, 75);
   color: #ebc4a0;
   padding: 5px;
-  font-style: italic;
-  font-weight: bold;
-  margin-left: 50px;
+
+  margin-left: 10px;
 }
 .App-box{
   background-color: rgb(129, 52, 52);

@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Task from './Task';
 import Counter from './Counter';
+import { useState } from 'react';
 // const greeting = 'HELLO WORLD!'
 // const tasks = [
 //   { id: 1, text: 'Lorem Ipsum 1', completed: true },
@@ -11,19 +12,15 @@ import Counter from './Counter';
 // ]
 
 function App() {
-  function onDelete(id) {
-    fetch('/delete/' + id)
-      .then(() => { })
-      .catch(() => { })
-  }
-  const showFooter = true;
+  const [showCounter, setShowCounter] = useState(true)
   return (
     <div className="App">
       <header className="App-header">
+        {
+          showCounter && <Counter />
+        }
 
-        <Counter />
-
-
+        <button className='button' onClick={() => { setShowCounter(false) }}>Hide counter</button>
         {/* {
           tasks.map(task => (
             <Task

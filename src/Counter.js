@@ -1,16 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from "react"
 
 export default function Counter() {
-  let [currentValue, setCurrentValue] = useState(0)
+  const [value, setValue] = useState(10)
+  const [title, setTitle] = useState('')
 
-  let number = 0
-  function increase() {
+  useEffect(() => {
+    let sint = setInterval(() => {
+      console.log('test ' + value);
+      setValue(value + 1)
+    }, 1000)
+    return () => {
+      clearInterval(sint)
+    }
+  }, [])
+  function handleClick() {
+    const newValue = value + 1;
+    setValue(newValue);
 
   }
+  function updateTitle() {
+    setTitle('Current value is ' + value)
+  }
+
   return (
     <div>
-      <p>{number}</p>
-      <button onClick={increase}>Submit </button>
+      <p>{value}</p>
+      <p>{title}</p>
+      <button className="button" onClick={handleClick} >submit</button>
+      <button className="button" onClick={updateTitle} >submit</button>
     </div>
   )
-}   
+}

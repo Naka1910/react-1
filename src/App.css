@@ -36,14 +36,3 @@
     transform: rotate(360deg);
   }
 }
-.button{
-  background-color:rgb(131, 75, 75);
-  color: #ebc4a0;
-  padding: 5px;
-
-  margin-left: 10px;
-}
-.App-box{
-  background-color: rgb(129, 52, 52);
-  margin-right: 50px;
-}

@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
+import './Counter.css';
 
 export default function Counter() {
   const [value, setValue] = useState(10)
   const [title, setTitle] = useState('')
 
-  useEffect(() => {
-    let sint = setInterval(() => {
-      console.log('test ' + value);
-      setValue(value + 1)
-    }, 1000)
-    return () => {
-      clearInterval(sint)
-    }
-  }, [])
+  // useEffect(() => {
+  //   let sint = setInterval(() => {
+  //     console.log('test ' + value);
+  //     setValue(value + 1)
+  //   }, 1000)
+  //   return () => {
+  //     clearInterval(sint)
+  //   }
+  // }, [])
   function handleClick() {
     const newValue = value + 1;
     setValue(newValue);

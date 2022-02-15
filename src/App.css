@@ -43,7 +43,10 @@
 .img{
   width: 300px;
   height: auto;
+  opacity: 50%;
 }
 .container{
+  width: 1200px;
   display: flex;
+  justify-content: space-between;
 }

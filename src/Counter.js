@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import './Counter.css';
+import axios from 'axios'
 
 export default function Counter() {
   const [value, setValue] = useState(10)
   const [title, setTitle] = useState('')
+  const [products, setProducts] = useState([]);
 
   // useEffect(() => {
   //   let sint = setInterval(() => {
@@ -14,6 +16,21 @@ export default function Counter() {
   //     clearInterval(sint)
   //   }
   // }, [])
+
+  function getData() {
+    axios.get('https://retoolapi.dev/FNoduP/products')
+      .then(response => {
+        setProducts(response.data)
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   function handleClick() {
     const newValue = value + 1;
     setValue(newValue);
@@ -29,6 +46,14 @@ export default function Counter() {
       <p>{title}</p>
       <button className="button" onClick={handleClick} >submit</button>
       <button className="button" onClick={updateTitle} >submit</button>
+      {
+        products.map((item, index) => (
+          <div className="container" key={index}>
+            <h1 className="title-1">{item.title}</h1>
+            <img className="img" src={item.image} alt={item.image} />
+          </div>
+        ))
+      }
     </div>
   )
 }

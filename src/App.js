@@ -3,6 +3,8 @@ import './App.css';
 import Task from './Task';
 import Counter from './Counter';
 import { useState } from 'react';
+import Products from './Products';
+
 // const greeting = 'HELLO WORLD!'
 // const tasks = [
 //   { id: 1, text: 'Lorem Ipsum 1', completed: true },
@@ -19,7 +21,7 @@ function App() {
         {
           showCounter && <Counter />
         }
-
+        <Products />
         <button className='button' onClick={() => { setShowCounter(false) }}>Hide counter</button>
         {/* {
           tasks.map(task => (

@@ -1,9 +1,10 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import Item from "./Item";
 
-export default function Products() {
+export default function Prooducts() {
   const [products, setProducts] = useState([])
-
+  const [color, setColor] = useState(true)
   function getData() {
     axios.get('https://retoolapi.dev/FNoduP/products')
       .then(response => {
@@ -20,13 +21,7 @@ export default function Products() {
     <div>
       {
         products.map((item, index) => (
-          <div className="container" key={index}>
-            <p>{item.id}</p>
-            <h1 className="title-1">{item.title}</h1>
-            <p className="title-1">{item.price}</p>
-            <img className="img" src={item.image} alt={item.image} />
-            <p className="title-1">{item.description}</p>
-          </div>
+          <Item key={index} item={item} color={color} setColor={setColor} />
         ))
       }
     </div>

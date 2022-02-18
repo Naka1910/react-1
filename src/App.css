@@ -50,3 +50,7 @@
   display: flex;
   justify-content: space-between;
 }
+.title-2{
+  color: red;
+  font-size: 20px;
+}

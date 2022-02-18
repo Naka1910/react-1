@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Task from './Task';
+// import Task from './Task';
 import Counter from './Counter';
 import { useState } from 'react';
-import Products from './Products';
-
+import Products from './Products'
 // const greeting = 'HELLO WORLD!'
 // const tasks = [
 //   { id: 1, text: 'Lorem Ipsum 1', completed: true },
